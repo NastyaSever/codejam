@@ -1,47 +1,137 @@
-import brown1 from './brown1.png';
-import brown2 from './brown2.png';
-import brown3 from './brown3.png';
-import brown4 from './brown4.png';
-import brown5 from './brown5.png';
-import brown6 from './brown6.png';
-import brown7 from './brown7.png';
-import brown8 from './brown8.png';
-import brown9 from './brown9.png';
-import brown10 from './brown10.png';
-import brown11 from './brown11.png';
-import brown12 from './brown12.png';
-import brown13 from './brown13.png';
-import brown14 from './brown14.png';
-import brown15 from './brown15.png';
-import brown16 from './brown16.png';
-import brown17 from './brown17.png';
-import brown18 from './brown18.png';
-import brown19 from './brown19.png';
-import brown20 from './brown20.png';
-import brown21 from './brown21.png';
 
-const cards = {
-  brown1,
-  brown2,
-  brown3,
-  brown4,
-  brown5,
-  brown6,
-  brown7,
-  brown8,
-  brown9,
-  brown10,
-  brown11,
-  brown12,
-  brown13,
-  brown14,
-  brown15,
-  brown16,
-  brown17,
-  brown18,
-  brown19,
-  brown20,
-  brown21,
-}
+const brownCards = [
+  {
+    id: 'brown1',
+    cardFace: 'brown1.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown2',
+    cardFace: 'brown2.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown3',
+    cardFace: 'brown3.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown4',
+    cardFace: 'brown4.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown3',
+    cardFace: 'brown3.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown5',
+    cardFace: 'brown5.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown6',
+    cardFace: 'brown6.png',
+    difficulty: 'hard',
+    color: 'brown',
+  },
+  {
+    id: 'brown7',
+    cardFace: 'brown7.png',
+    difficulty: 'hard',
+    color: 'brown',
+  },
+  {
+    id: 'brown8',
+    cardFace: 'brown8.png',
+    difficulty: 'hard',
+    color: 'brown',
+  },
+  {
+    id: 'brown9',
+    cardFace: 'brown9.png',
+    difficulty: 'hard',
+    color: 'brown',
+  },
+  {
+    id: 'brown10',
+    cardFace: 'brown10.png',
+    difficulty: 'hard',
+    color: 'brown',
+  },
+  {
+    id: 'brown11',
+    cardFace: 'brown11.png',
+    difficulty: 'easy',
+    color: 'brown',
+  },
+  {
+    id: 'brown12',
+    cardFace: 'brown12.png',
+    difficulty: 'easy',
+    color: 'brown',
+  },
+  {
+    id: 'brown13',
+    cardFace: 'brown13.png',
+    difficulty: 'easy',
+    color: 'brown',
+  },
+  {
+    id: 'brown14',
+    cardFace: 'brown14.png',
+    difficulty: 'easy',
+    color: 'brown',
+  },
+  {
+    id: 'brown15',
+    cardFace: 'brown15.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown16',
+    cardFace: 'brown16.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown17',
+    cardFace: 'brown17.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown18',
+    cardFace: 'brown18.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown19',
+    cardFace: 'brown19.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown20',
+    cardFace: 'brown20.png',
+    difficulty: 'normal',
+    color: 'brown',
+  },
+  {
+    id: 'brown21',
+    cardFace: 'brown21.png',
+    difficulty: 'easy',
+    color: 'brown',
+  },
+]
 
-export default cards
+export default brownCards

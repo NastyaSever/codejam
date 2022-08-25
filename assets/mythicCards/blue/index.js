@@ -1,29 +1,76 @@
-import blue1 from './blue1.png';
-import blue2 from './blue2.png';
-import blue3 from './blue3.png';
-import blue4 from './blue4.png';
-import blue5 from './blue5.png';
-import blue6 from './blue6.png';
-import blue7 from './blue7.png';
-import blue8 from './blue8.png';
-import blue9 from './blue9.png';
-import blue10 from './blue10.png';
-import blue11 from './blue11.png';
-import blue12 from './blue12.png';
+const blueCards = [
+  {
+    id: 'blue1',
+    cardFace: 'blue1.png',
+    difficulty: 'hard',
+    color: 'blue',
+  },
+  {
+    id: 'blue2',
+    cardFace: 'blue2.png',
+    difficulty: 'hard',
+    color: 'blue',
+  },
+  {
+    id: 'blue3',
+    cardFace: 'blue3.png',
+    difficulty: 'easy',
+    color: 'blue',
+  },
+  {
+    id: 'blue4',
+    cardFace: 'blue4.png',
+    difficulty: 'easy',
+    color: 'blue',
+  },
+  {
+    id: 'blue5',
+    cardFace: 'blue5.png',
+    difficulty: 'easy',
+    color: 'blue',
+  },
+  {
+    id: 'blue6',
+    cardFace: 'blue6.png',
+    difficulty: 'hard',
+    color: 'blue',
+  },
+  {
+    id: 'blue7',
+    cardFace: 'blue7.png',
+    difficulty: 'normal',
+    color: 'blue',
+  },
+  {
+    id: 'blue8',
+    cardFace: 'blue8.png',
+    difficulty: 'hard',
+    color: 'blue',
+  },
+  {
+    id: 'blue9',
+    cardFace: 'blue9.png',
+    difficulty: 'hard',
+    color: 'blue',
+  },
+  {
+    id: 'blue10',
+    cardFace: 'blue10.png',
+    difficulty: 'easy',
+    color: 'blue',
+  },
+  {
+    id: 'blue11',
+    cardFace: 'blue11.png',
+    difficulty: 'normal',
+    color: 'blue',
+  },
+  {
+    id: 'blue12',
+    cardFace: 'blue12.png',
+    difficulty: 'normal',
+    color: 'blue',
+  },
+]
 
-const cards = {
-  blue1,
-  blue2,
-  blue3,
-  blue4,
-  blue5,
-  blue6,
-  blue7,
-  blue8,
-  blue9,
-  blue10,
-  blue11,
-  blue12,
-}
-
-export default cards
+export default blueCards
