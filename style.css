@@ -76,6 +76,25 @@ main {
   margin: 20px;
 }
 
+/*.open_card {
+  display: flex;
+  height: auto;
+  width: 25%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+
+.card_img {
+  display: flex;
+  width: 25%;
+  height: auto;
+  margin: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .stadges {
   width: 100%;
   list-style: none;
