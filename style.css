@@ -83,10 +83,10 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}*/
+}
+*/
 
 .card_img {
-  display: flex;
   width: 25%;
   height: auto;
   margin: 20px;

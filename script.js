@@ -110,16 +110,39 @@ function shuffleDeskOfCards() {
 /***************Events************/
 const cardmix = document.querySelector('.cardmixButton');
 const openCard = document.querySelector('.open_card');
-const closedCard = document.querySelector('.closed_card')
+const closedCard = document.querySelector('.closed_card');
+const img = document.createElement('img');
 
-cardmix.addEventListener('click', shuffleDeskOfCards());
+//cardmix.addEventListener('click', shuffleDeskOfCards);
+//let shuffle = shuffleDeskOfCards();
+let shuffle;
+let newOpenCard = 0;
 
-closedCard.addEventListener('click',() => {
-  const img = document.createElement('img');
-  img.classList.add('card_img');
+if(cardmix.addEventListener('click', () => {
+  shuffle = shuffleDeskOfCards();
+  newOpenCard = 0;
+}));
+
+function addNewOpenCard() {
+  let numOfCard = newOpenCard;
   openCard.append(img)
-  img.src = './assets/mythicCards/blue/blue1.png';
+  img.classList.add('card_img');
+  img.src = `./assets/mythicCards/${shuffle[numOfCard].color}/${shuffle[numOfCard].cardFace}`;
   img.onload = () => {
-    openCard.style.backroundImage = 'url(`./assets/mythicCards/blue/blue1.png`)'
+    openCard.style.backroundImage = `url(./assets/mythicCards/${shuffle[numOfCard].color}/${shuffle[numOfCard].cardFace})`;
   }
-})
+  console.log(shuffle[numOfCard])
+};
+
+function getNextCard() {
+  if(newOpenCard >= shuffle.length) {
+    openCard.style.display = 'none'
+    return;
+  } else {
+    addNewOpenCard()
+    newOpenCard++
+    openCard.style.display = 'flex'
+  }
+};
+
+closedCard.addEventListener('click', getNextCard)
