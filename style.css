@@ -36,21 +36,31 @@ body {
   height: 100%;
   width: 100%;
   padding: 20px;
+  justify-content: space-between;
 }
 
-.azathoth {
+.azathoth,
+.cthulhu {
   width: 15%;
   height: 100%;
-  background-image: url('./assets/ancients/Azathoth.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
   z-index: 2;
+  cursor: pointer;
+}
+
+.azathoth {
+  background-image: url('./assets/ancients/Azathoth.png');
+}
+
+.cthulhu {
+  background-image: url('./assets/ancients/Cthulthu.png');
 }
 
 main {
-  display: flex;
+  display: none;
   width: 100%;
   height: 100%;
 }
@@ -63,7 +73,7 @@ main {
 }
 
 .cards {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 50%;
   padding: 0 20px 0 0;
