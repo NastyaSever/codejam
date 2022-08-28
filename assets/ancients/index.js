@@ -1,6 +1,6 @@
 
 
-const ancientsData = [
+const ancients = [
   {
     id: 'azathoth',
     name: 'azathoth',
@@ -83,4 +83,4 @@ const ancientsData = [
   },
 ]
 
-export default ancientsData
+export default ancients

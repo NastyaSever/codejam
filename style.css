@@ -76,15 +76,24 @@ main {
   margin: 20px;
 }
 
-/*.open_card {
-  display: flex;
-  height: auto;
-  width: 25%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
 }
-*/
+
+.dot_brown {
+  background-color: #A0522D;
+}
+
+.dot_green {
+  background-color: #228B22;
+}
+
+.dot_blue {
+  background-color: #1E90FF;
+}
 
 .card_img {
   width: 25%;
@@ -108,9 +117,12 @@ main {
 .third {
   display: flex;
   flex-direction: column;
+  width: 30%;
 }
 
 .counter {
   list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
