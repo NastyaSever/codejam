@@ -59,6 +59,10 @@ body {
   background-image: url('./assets/ancients/Cthulthu.png');
 }
 
+.active {
+  border: red 2px solid;
+}
+
 main {
   display: none;
   width: 100%;

@@ -3,10 +3,25 @@ import brownCards from "./assets/mythicCards/brown/index.js";
 import blueCards from "./assets/mythicCards/blue/index.js";
 import ancients from './assets/ancients/index.js';
 
+const ancientsCards = document.querySelector('.ancients')
 const azathothCard = document.querySelector('.azathoth');
 const azathoth = ancients[0];
 const cthulhuCard = document.querySelector('.cthulhu');
 const cthulhu = ancients[1];
+
+if(azathothCard.addEventListener('click', ()=> {
+  main.style.display = 'flex';
+  azathothCard.classList.add('active');
+  cthulhuCard.classList.remove('active');
+  setNumOfCardForAncients(azathoth)
+}));
+if(cthulhuCard.addEventListener('click', () => {
+  main.style.display = 'flex';
+  azathothCard.classList.remove('active');
+  cthulhuCard.classList.add('active');
+  setNumOfCardForAncients(cthulhu);
+}));
+
 
 function shuffleDeskOfCards() {
 
@@ -27,11 +42,11 @@ function shuffleDeskOfCards() {
   let arrOfCardsBrown;
   let arrOfCardsBlue;
 
-  if(azathothCard.style.border != '0') {
+  if(azathothCard.classList.contains('active')) {
     arrOfCardsGreen = randomDiffCards(5, greenCards.length)
     arrOfCardsBrown = randomDiffCards(9, brownCards.length)
     arrOfCardsBlue = randomDiffCards(2, blueCards.length)
-  } else if(cthulhuCard.style != '0') {
+  } else if(cthulhuCard.classList.contains('active')) {
     arrOfCardsGreen = randomDiffCards(4, greenCards.length);
     arrOfCardsBrown = randomDiffCards(9, brownCards.length);
     arrOfCardsBlue = randomDiffCards(2, blueCards.length);
@@ -65,11 +80,11 @@ function shuffleDeskOfCards() {
   let secondStageArr;
   let thirdStageArr;
 
-  if(azathothCard.style.border != '0') {
+  if(azathothCard.classList.contains('active')) {
     firstStageArr = [...arrBlue.slice(0,1),...arrBrown.slice(0,2), ...arrGreen.slice(0,1)]
     secondStageArr = [...arrBlue.slice(1,2),...arrBrown.slice(2,5), ...arrGreen.slice(1,3)]
     thirdStageArr = [...arrBrown.slice(5,9), ...arrGreen.slice(3,5)]
-  } else if(cthulhuCard.style.border != '0') {
+  } else if(cthulhuCard.classList.contains('active')) {
     firstStageArr = [...arrBlue.slice(0,2),...arrBrown.slice(0,2)]
     secondStageArr = [...arrBrown.slice(2,5), ...arrGreen.slice(0,1)]
     thirdStageArr = [...arrBrown.slice(5,9), ...arrGreen.slice(1,4)]
@@ -110,13 +125,15 @@ if(azathothCard.addEventListener('click', ()=> {
   main.style.display = 'flex';
   azathothCard.style.border = 'red 2px solid';
   cthulhuCard.style.border = '0';
-  setNumOfCardForAncients(azathoth)
+  setNumOfCardForAncients(azathoth);
+  getStartTracker()
 }));
 if(cthulhuCard.addEventListener('click', () => {
   main.style.display = 'flex';
   cthulhuCard.style.border = 'red 2px solid';
   azathothCard.style.border = '0';
   setNumOfCardForAncients(cthulhu);
+  getStartTracker()
 }));
 
 function setNumOfCardForAncients(anc) {
@@ -181,9 +198,9 @@ let counterThirdGreen = document.querySelector('.counter_third .dot_green');
 let counterThirdBrown = document.querySelector('.counter_third .dot_brown');
 let counterThirdBlue = document.querySelector('.counter_third .dot_blue');
 
-counterFirstBrown.textContent = firstStageGreen;
+counterFirstBrown.textContent = firstStageBrown;
 counterFirstBlue.textContent = firstStageBlue;
-counterFirstGreen.textContent = firstStageBrown;
+counterFirstGreen.textContent = firstStageGreen;
 counterSecondBrown.textContent = secondStageBrown;
 counterSecondBlue.textContent = secondStageBlue;
 counterSecondGreen.textContent = secondStageGreen;
@@ -229,19 +246,31 @@ function setClosedCardTracker() {
 };
 
 function getStartTracker() {
-  firstStageGreen = ancients[0].firstStage.greenCards;
-  firstStageBlue = ancients[0].firstStage.blueCards;
-  firstStageBrown = ancients[0].firstStage.brownCards;
-  secondStageGreen = ancients[0].secondStage.greenCards;
-  secondStageBlue = ancients[0].secondStage.blueCards;
-  secondStageBrown = ancients[0].secondStage.brownCards;
-  thirdStageGreen = ancients[0].thirdStage.greenCards;
-  thirdStageBlue = ancients[0].thirdStage.blueCards;
-  thirdStageBrown = ancients[0].thirdStage.brownCards;
+  if(azathothCard.classList.contains('active')) {
+    firstStageGreen = ancients[0].firstStage.greenCards;
+    firstStageBlue = ancients[0].firstStage.blueCards;
+    firstStageBrown = ancients[0].firstStage.brownCards;
+    secondStageGreen = ancients[0].secondStage.greenCards;
+    secondStageBlue = ancients[0].secondStage.blueCards;
+    secondStageBrown = ancients[0].secondStage.brownCards;
+    thirdStageGreen = ancients[0].thirdStage.greenCards;
+    thirdStageBlue = ancients[0].thirdStage.blueCards;
+    thirdStageBrown = ancients[0].thirdStage.brownCards;
+  } else if(cthulhuCard.classList.contains('active')) {
+    firstStageGreen = ancients[1].firstStage.greenCards;
+    firstStageBlue = ancients[1].firstStage.blueCards;
+    firstStageBrown = ancients[1].firstStage.brownCards;
+    secondStageGreen = ancients[1].secondStage.greenCards;
+    secondStageBlue = ancients[1].secondStage.blueCards;
+    secondStageBrown = ancients[1].secondStage.brownCards;
+    thirdStageGreen = ancients[1].thirdStage.greenCards;
+    thirdStageBlue = ancients[1].thirdStage.blueCards;
+    thirdStageBrown = ancients[1].thirdStage.brownCards;
+  }
 
-  counterFirstBrown.textContent = firstStageGreen;
+  counterFirstBrown.textContent = firstStageBrown;
   counterFirstBlue.textContent = firstStageBlue;
-  counterFirstGreen.textContent = firstStageBrown;
+  counterFirstGreen.textContent = firstStageGreen;
   counterSecondBrown.textContent = secondStageBrown;
   counterSecondBlue.textContent = secondStageBlue;
   counterSecondGreen.textContent = secondStageGreen;
