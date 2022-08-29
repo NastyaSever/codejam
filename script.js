@@ -8,19 +8,44 @@ const azathothCard = document.querySelector('.azathoth');
 const azathoth = ancients[0];
 const cthulhuCard = document.querySelector('.cthulhu');
 const cthulhu = ancients[1];
+const iogSothothCard = document.querySelector('.iogSothoth');
+const iogSothoth = ancients[2];
+const shubNiggurathCard = document.querySelector('.shubNiggurath');
+const shubNiggurath = ancients[3];
 
 if(azathothCard.addEventListener('click', ()=> {
   main.style.display = 'flex';
   azathothCard.classList.add('active');
   cthulhuCard.classList.remove('active');
+  shubNiggurathCard.classList.remove('active');
+  iogSothothCard.classList.remove('active');
   setNumOfCardForAncients(azathoth)
 }));
 if(cthulhuCard.addEventListener('click', () => {
   main.style.display = 'flex';
   azathothCard.classList.remove('active');
   cthulhuCard.classList.add('active');
+  shubNiggurathCard.classList.remove('active');
+  iogSothothCard.classList.remove('active');
   setNumOfCardForAncients(cthulhu);
 }));
+if(iogSothothCard.addEventListener('click', () => {
+  main.style.display = 'flex';
+  azathothCard.classList.remove('active');
+  cthulhuCard.classList.remove('active');
+  shubNiggurathCard.classList.remove('active');
+  iogSothothCard.classList.add('active');
+  setNumOfCardForAncients(iogSothoth);
+}));
+if(shubNiggurathCard.addEventListener('click', () => {
+  main.style.display = 'flex';
+  azathothCard.classList.remove('active');
+  cthulhuCard.classList.remove('active');
+  shubNiggurathCard.classList.add('active');
+  iogSothothCard.classList.remove('active');
+  setNumOfCardForAncients(shubNiggurath);
+}));
+
 
 
 function shuffleDeskOfCards() {
@@ -50,7 +75,15 @@ function shuffleDeskOfCards() {
     arrOfCardsGreen = randomDiffCards(4, greenCards.length);
     arrOfCardsBrown = randomDiffCards(9, brownCards.length);
     arrOfCardsBlue = randomDiffCards(2, blueCards.length);
-  };
+  } else if(shubNiggurathCard.classList.contains('active')) {
+    arrOfCardsGreen = randomDiffCards(6, greenCards.length);
+    arrOfCardsBrown = randomDiffCards(8, brownCards.length);
+    arrOfCardsBlue = randomDiffCards(2, blueCards.length);
+  } else if(iogSothothCard.classList.contains('active')) {
+    arrOfCardsGreen = randomDiffCards(5, greenCards.length);
+    arrOfCardsBrown = randomDiffCards(9, brownCards.length);
+    arrOfCardsBlue = randomDiffCards(2, blueCards.length);
+  }
 
   arrOfCardsBlue = arrOfCardsBlue.map(el => {
   return `blue${el}`
@@ -88,7 +121,15 @@ function shuffleDeskOfCards() {
     firstStageArr = [...arrBlue.slice(0,2),...arrBrown.slice(0,2)]
     secondStageArr = [...arrBrown.slice(2,5), ...arrGreen.slice(0,1)]
     thirdStageArr = [...arrBrown.slice(5,9), ...arrGreen.slice(1,4)]
-  };
+  } else if(shubNiggurathCard.classList.contains('active')) {
+    firstStageArr = [...arrBlue.slice(0,1),...arrBrown.slice(0,2), ...arrGreen.slice(0,1)]
+    secondStageArr = [...arrBlue.slice(1,2),...arrBrown.slice(2,4), ...arrGreen.slice(1,4)]
+    thirdStageArr = [...arrBrown.slice(4,8), ...arrGreen.slice(4,6)]
+  } else if(iogSothothCard.classList.contains('active')) {
+    firstStageArr = [...arrBlue.slice(0,1),...arrBrown.slice(0,2)]
+    secondStageArr = [...arrBlue.slice(1,2),...arrBrown.slice(2,5), ...arrGreen.slice(0,2)]
+    thirdStageArr = [...arrBrown.slice(5,9), ...arrGreen.slice(2,5)]
+  }
 
   function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
@@ -126,6 +167,8 @@ if(azathothCard.addEventListener('click', ()=> {
   cards.style.display = 'none';
   azathothCard.style.border = 'red 2px solid';
   cthulhuCard.style.border = '0';
+  shubNiggurathCard.style.border = '0';
+  iogSothothCard.style.border = '0';
   setNumOfCardForAncients(azathoth);
   getStartTracker()
 }));
@@ -134,7 +177,29 @@ if(cthulhuCard.addEventListener('click', () => {
   cards.style.display = 'none';
   cthulhuCard.style.border = 'red 2px solid';
   azathothCard.style.border = '0';
+  shubNiggurathCard.style.border = '0';
+  iogSothothCard.style.border = '0';
   setNumOfCardForAncients(cthulhu);
+  getStartTracker()
+}));
+if(shubNiggurathCard.addEventListener('click', () => {
+  main.style.display = 'flex';
+  cards.style.display = 'none';
+  shubNiggurathCard.style.border = 'red 2px solid';
+  cthulhuCard.style.border = '0';
+  azathothCard.style.border = '0';
+  iogSothothCard.style.border = '0';
+  setNumOfCardForAncients(shubNiggurath);
+  getStartTracker()
+}));
+if(iogSothothCard.addEventListener('click', () => {
+  main.style.display = 'flex';
+  cards.style.display = 'none';
+  iogSothothCard.style.border = 'red 2px solid';
+  cthulhuCard.style.border = '0';
+  azathothCard.style.border = '0';
+  shubNiggurathCard.style.border = '0';
+  setNumOfCardForAncients(iogSothoth);
   getStartTracker()
 }));
 
@@ -236,9 +301,9 @@ function setClosedCardTracker() {
       firstStageBrown--
     }
   }
-  counterFirstBrown.textContent = firstStageGreen;
+  counterFirstBrown.textContent = firstStageBrown;
   counterFirstBlue.textContent = firstStageBlue;
-  counterFirstGreen.textContent = firstStageBrown;
+  counterFirstGreen.textContent = firstStageGreen;
   counterSecondBrown.textContent = secondStageBrown;
   counterSecondBlue.textContent = secondStageBlue;
   counterSecondGreen.textContent = secondStageGreen;
@@ -268,6 +333,26 @@ function getStartTracker() {
     thirdStageGreen = ancients[1].thirdStage.greenCards;
     thirdStageBlue = ancients[1].thirdStage.blueCards;
     thirdStageBrown = ancients[1].thirdStage.brownCards;
+  } else if (iogSothothCard.classList.contains('active')){
+    firstStageGreen = ancients[2].firstStage.greenCards;
+    firstStageBlue = ancients[2].firstStage.blueCards;
+    firstStageBrown = ancients[2].firstStage.brownCards;
+    secondStageGreen = ancients[2].secondStage.greenCards;
+    secondStageBlue = ancients[2].secondStage.blueCards;
+    secondStageBrown = ancients[2].secondStage.brownCards;
+    thirdStageGreen = ancients[2].thirdStage.greenCards;
+    thirdStageBlue = ancients[2].thirdStage.blueCards;
+    thirdStageBrown = ancients[2].thirdStage.brownCards;
+  } else if(shubNiggurathCard.classList.contains('active')) {
+    firstStageGreen = ancients[3].firstStage.greenCards;
+    firstStageBlue = ancients[3].firstStage.blueCards;
+    firstStageBrown = ancients[3].firstStage.brownCards;
+    secondStageGreen = ancients[3].secondStage.greenCards;
+    secondStageBlue = ancients[3].secondStage.blueCards;
+    secondStageBrown = ancients[3].secondStage.brownCards;
+    thirdStageGreen = ancients[3].thirdStage.greenCards;
+    thirdStageBlue = ancients[3].thirdStage.blueCards;
+    thirdStageBrown = ancients[3].thirdStage.brownCards;
   }
 
   counterFirstBrown.textContent = firstStageBrown;
