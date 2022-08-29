@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf');
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 480px;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  background-image: url('./assets/img/home.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 300px;
+}
+
+.ancients {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.azathoth,
+.cthulhu,
+.iogSothoth,
+.shubNiggurath {
+  width: 200px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.azathoth {
+  background-image: url('./assets/ancients/Azathoth.png');
+}
+
+.cthulhu {
+  background-image: url('./assets/ancients/Cthulthu.png');
+}
+
+.iogSothoth {
+  background-image: url('./assets/ancients/IogSothoth.png');
+}
+
+.shubNiggurath {
+  background-image: url('./assets/ancients/ShubNiggurath.png');
+}
+
+.active {
+  border: red 2px solid;
+}
+
+main {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.levels,
+.cardmix {
+  width: 50%;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.cards {
+  display: none;
+  flex-direction: column;
+  width: 50%;
+  padding: 0 20px 0 0;
+}
+
+.closed_card {
+  display: flex;
+  width: 30%;
+  height: auto;
+  margin: 20px;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot_brown {
+  background-color: #A0522D;
+}
+
+.dot_green {
+  background-color: #228B22;
+}
+
+.dot_blue {
+  background-color: #1E90FF;
+}
+
+.open_closed_cards {
+  display: flex;
+}
+
+.card_img {
+  width: 50%;
+  height: auto;
+  margin: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.stadges {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.first,
+.second,
+.third {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.counter {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
