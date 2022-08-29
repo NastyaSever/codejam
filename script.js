@@ -123,6 +123,7 @@ let thirdStageBrown;
 
 if(azathothCard.addEventListener('click', ()=> {
   main.style.display = 'flex';
+  cards.style.display = 'none';
   azathothCard.style.border = 'red 2px solid';
   cthulhuCard.style.border = '0';
   setNumOfCardForAncients(azathoth);
@@ -130,6 +131,7 @@ if(azathothCard.addEventListener('click', ()=> {
 }));
 if(cthulhuCard.addEventListener('click', () => {
   main.style.display = 'flex';
+  cards.style.display = 'none';
   cthulhuCard.style.border = 'red 2px solid';
   azathothCard.style.border = '0';
   setNumOfCardForAncients(cthulhu);

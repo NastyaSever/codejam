@@ -85,7 +85,7 @@ main {
 
 .closed_card {
   display: flex;
-  width: 25%;
+  width: 30%;
   height: auto;
   margin: 20px;
 }
@@ -109,8 +109,12 @@ main {
   background-color: #1E90FF;
 }
 
+.open_closed_cards {
+  display: flex;
+}
+
 .card_img {
-  width: 25%;
+  width: 50%;
   height: auto;
   margin: 20px;
   background-position: center;
